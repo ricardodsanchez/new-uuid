@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>New UUID</title>
+</head>
+<body style="text-align:center">
+
+<h1>New UUID / GUID</h1>
+<button <label style="font-size:1em" for="getuuid" onclick='getUuid()'>Get new UUID</label>
+<div id="uuid"></div>
+</body>
+
+<script>
+
+function createNode(element) {
+      return document.createElement(element);
+  }
+
+  const result = document.getElementById('uuid');
+  const url = 'https://newuuid.azurewebsites.net/api/GetNewUUID';
+
+  function getUuid(){
+    fetch(url)
+    .then((resp) => resp.json())
+    .then(function(data) {
+        let span = createNode('span');
+      span.innerHTML = `${uuid}`;
+      append(result, span);
+      })
+    .catch(function(error) {
+      console.log(error);
+    });
+  }   
+</script>
+</html>
