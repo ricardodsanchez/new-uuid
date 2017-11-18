@@ -1,0 +1,21 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "New UUID / GUID";
+}
+
+<div class="row text-center">
+    <h2>New UUID / GUID</h2>
+    <p>Need a UUID / GUID? Just click the button below to get one.</p>
+    <div>
+        @if(Model.NewUuid != ''){
+            <div class="alert alert-info" role="alert">
+                @Model.NewUuid
+            </div>
+            }
+    </div>
+    <form method="POST">
+        @Html.AntiForgeryToken()
+        <input type="submit" value="Get new UUID / GUID" />
+    </form>
+</div>
