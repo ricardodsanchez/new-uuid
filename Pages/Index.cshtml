@@ -8,7 +8,7 @@
     <h2>New UUID / GUID</h2>
     <p>Need a UUID / GUID? Just click the button below to get one.</p>
     <div>
-        @if(Model.NewUuid != ''){
+        @if(Model.NewUuid != null){
             <div class="alert alert-info" role="alert">
                 @Model.NewUuid
             </div>
