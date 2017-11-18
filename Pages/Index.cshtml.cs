@@ -12,7 +12,7 @@ namespace NewUUID.Pages
         public string NewUuid { get; private set; }
         public void OnGet()
         {
-            NewUuid = string.Empty;
+            NewUuid = "";
         }
 
         public void OnPost()
